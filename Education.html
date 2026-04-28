@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+</head>
+<body>
+    <script>
+        // script.js
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ===== Typing Effect Title =====
+    const title = document.querySelector("nav button");
+    const originalText = "Home";
+    title.textContent = "";
+
+    let i = 0;
+    function typeButton() {
+        if (i < originalText.length) {
+            title.textContent += originalText.charAt(i);
+            i++;
+            setTimeout(typeButton, 120);
+        }
+    }
+    typeButton();
+
+
+    // ===== Scroll Fade Animation =====
+    const paragraphs = document.querySelectorAll("main p");
+
+    function revealContent() {
+        paragraphs.forEach((item) => {
+            const top = item.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (top < windowHeight - 80) {
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+            }
+        });
+    }
+
+    paragraphs.forEach((item) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(40px)";
+        item.style.transition = "0.8s ease";
+    });
+
+    window.addEventListener("scroll", revealContent);
+    revealContent();
+
+
+    // ===== Hover Glow Effect =====
+    paragraphs.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            card.style.boxShadow = "0 0 25px rgba(255,255,255,0.25)";
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.boxShadow = "none";
+        });
+    });
+
+
+    // ===== Welcome Message =====
+    setTimeout(() => {
+        console.log("Welcome to Education Page 🎓");
+    }, 1000);
+
+
+    // ===== Background Auto Color Change =====
+    const body = document.body;
+    let toggle = false;
+
+    setInterval(() => {
+        if (toggle) {
+            body.style.background =
+                "linear-gradient(135deg,#4facfe,#6a11cb,#00c9a7)";
+        } else {
+            body.style.background =
+                "linear-gradient(135deg,#ff6a88,#6a11cb,#00c9ff)";
+        }
+
+        body.style.transition = "2s ease";
+        toggle = !toggle;
+    }, 5000);
+
+});
+    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    padding:30px 15px;
+    color:#fff;
+    background:
+    radial-gradient(circle at top left,#00c6ff55 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#ff00cc55 0%,transparent 35%),
+    linear-gradient(135deg,#0f172a,#111827,#1e1b4b);
+    background-attachment:fixed;
+}
+
+/* Container */
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+/* Navbar */
+nav{
+    margin-bottom:25px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+}
+
+nav a{
+    text-decoration:none;
+}
+
+.btn{
+    padding:13px 28px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:#fff;
+    font-weight:600;
+    transition:0.3s ease;
+    box-shadow:0 10px 20px rgba(0,0,0,0.20);
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:linear-gradient(135deg,#06b6d4,#ec4899);
+}
+
+/* Main Card */
+main{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.10);
+    backdrop-filter:blur(14px);
+    border-radius:25px;
+    padding:40px 30px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.25);
+    animation:fadeUp 1s ease;
+}
+
+/* Heading */
+.title{
+    text-align:center;
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:35px;
+    color:#fff;
+    letter-spacing:1px;
+}
+
+/* Education Cards */
+.timeline{
+    display:grid;
+    gap:22px;
+}
+
+.card{
+    background:rgba(255,255,255,0.07);
+    padding:22px;
+    border-radius:18px;
+    border-left:5px solid #00c6ff;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+    border-left:5px solid #ec4899;
+}
+
+.card h2{
+    font-size:21px;
+    margin-bottom:10px;
+    color:#ffffff;
+}
+
+.card span{
+    font-size:14px;
+    color:#93c5fd;
+    display:block;
+    margin-bottom:12px;
+}
+
+.card p{
+    line-height:1.8;
+    color:#e5e7eb;
+    font-size:15px;
+}
+
+/* About Section */
+.about{
+    margin-top:30px;
+    background:rgba(255,255,255,0.07);
+    padding:25px;
+    border-radius:18px;
+}
+
+.about h3{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.about p{
+    line-height:1.9;
+    color:#e5e7eb;
+}
+
+/* Animation */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+body{
+    padding:20px 10px;
+}
+
+main{
+    padding:25px 18px;
+}
+
+.title{
+    font-size:26px;
+}
+
+.card h2{
+    font-size:18px;
+}
+
+.about h3{
+    font-size:20px;
+}
+
+.btn{
+    width:180px;
+    text-align:center;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+<ul>
+<li><a href="index.html" class="btn">🏠 Home</a></li>
+</ul>
+</nav>
+
+<main>
+
+<h1 class="title">🎓 Education Journey</h1>
+
+<div class="timeline">
+
+<div class="card">
+<h2>M.E.S. Vasant Joshi College</h2>
+<span>2024 - Pursuing | Goa</span>
+<p>
+Bachelor of Computer Applications (BCA).  
+Currently learning programming, web development, software development and data structures.
+</p>
+</div>
+
+<div class="card">
+<h2>St. Andrew Higher Secondary School</h2>
+<span>2022 - 2024 | Goa</span>
+<p>
+Completed Higher Secondary School Certificate (HSSC) in Commerce stream with strong academic focus.
+</p>
+</div>
+
+<div class="card">
+<h2>Mother of Mercy English High School</h2>
+<span>2012 - 2022 | Goa</span>
+<p>
+Completed Secondary School Certificate (SSC) with a strong academic foundation and discipline.
+</p>
+</div>
+
+</div>
+
+<div class="about">
+<h3>💻 Career Goal</h3>
+<p>
+I am passionate about learning and growing in the field of software development.  
+I have strong interest in web development, programming languages and modern technologies.  
+I enjoy building creative projects and improving my skills every day.
+</p>
+</div>
+
+</main>
+
+</div>
+
+</body>
+</html>

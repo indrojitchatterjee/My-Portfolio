@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Outfit',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow:hidden;
+    color:#fff;
+    background:
+    radial-gradient(circle at top left,#00eaff55 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#ff00aa55 0%,transparent 35%),
+    linear-gradient(135deg,#0b1120,#111827,#1e1b4b);
+}
+
+/* Floating Glow */
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    filter:blur(90px);
+    z-index:0;
+}
+
+body::before{
+    background:#00c6ff;
+    top:-60px;
+    left:-60px;
+}
+
+body::after{
+    background:#ec4899;
+    bottom:-60px;
+    right:-60px;
+}
+
+/* Main Card */
+.container{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:950px;
+    padding:45px 35px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 25px 50px rgba(0,0,0,0.35);
+    animation:fadeUp 1s ease;
+}
+
+/* Title */
+h1{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:12px;
+    font-weight:700;
+}
+
+.sub{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:35px;
+    font-size:15px;
+}
+
+/* Grid */
+.links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+/* Link */
+.links a{
+    text-decoration:none;
+}
+
+/* Card Buttons */
+.social-btn{
+    padding:22px 20px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.08);
+    display:flex;
+    align-items:center;
+    gap:16px;
+    transition:0.35s ease;
+    box-shadow:0 15px 25px rgba(0,0,0,0.18);
+}
+
+.social-btn:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 25px 35px rgba(0,0,0,0.28);
+}
+
+/* Icon Box */
+.icon{
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    color:#fff;
+    flex-shrink:0;
+}
+
+/* Text */
+.info h3{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+.info p{
+    font-size:13px;
+    color:#cbd5e1;
+}
+
+/* Individual Colors */
+.home .icon{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+}
+
+.instagram .icon{
+    background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
+}
+
+.linkedin .icon{
+    background:linear-gradient(135deg,#0a66c2,#2563eb);
+}
+
+.github .icon{
+    background:linear-gradient(135deg,#24292e,#586069);
+}
+
+/* Hover Border Glow */
+.home:hover{border-color:#38bdf8;}
+.instagram:hover{border-color:#f472b6;}
+.linkedin:hover{border-color:#60a5fa;}
+.github:hover{border-color:#94a3b8;}
+
+/* Footer */
+.note{
+    margin-top:30px;
+    text-align:center;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+/* Animation */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.container{
+    padding:28px 18px;
+}
+
+h1{
+    font-size:28px;
+}
+
+.links{
+    grid-template-columns:1fr;
+}
+
+.social-btn{
+    padding:18px;
+}
+
+.info h3{
+    font-size:16px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌐 Connect With Me</h1>
+<p class="sub">Follow my journey on social media platforms</p>
+
+<div class="links">
+
+<a href="index.html">
+<div class="social-btn home">
+<div class="icon">
+<i class="fa-solid fa-house"></i>
+</div>
+<div class="info">
+<h3>Home</h3>
+<p>Back to Portfolio</p>
+</div>
+</div>
+</a>
+
+<a href="https://www.instagram.com/indro_knight/" target="_blank">
+<div class="social-btn instagram">
+<div class="icon">
+<i class="fa-brands fa-instagram"></i>
+</div>
+<div class="info">
+<h3>Instagram</h3>
+<p>Photos & Lifestyle</p>
+</div>
+</div>
+</a>
+
+<a href="https://www.linkedin.com/in/indrojit-chatterjee-a55694375/" target="_blank">
+<div class="social-btn linkedin">
+<div class="icon">
+<i class="fa-brands fa-linkedin-in"></i>
+</div>
+<div class="info">
+<h3>LinkedIn</h3>
+<p>Professional Network</p>
+</div>
+</div>
+</a>
+
+<a href="https://github.com/Indrojit191006" target="_blank">
+<div class="social-btn github">
+<div class="icon">
+<i class="fa-brands fa-github"></i>
+</div>
+<div class="info">
+<h3>GitHub</h3>
+<p>Projects & Code</p>
+</div>
+</div>
+</a>
+
+</div>
+
+<p class="note">✨ Let's connect and grow together</p>
+
+</div>
+
+</body>
+</html>

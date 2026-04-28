@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Personal Portfolio</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Outfit',sans-serif;
+    min-height:100vh;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    background:
+    radial-gradient(circle at top left,#00c6ff55 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#ff00cc55 0%,transparent 35%),
+    linear-gradient(135deg,#0f172a,#111827,#1e1b4b);
+    background-attachment:fixed;
+}
+
+/* Container */
+.container{
+    width:100%;
+    max-width:950px;
+    padding:40px 30px;
+    border-radius:28px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.12);
+    backdrop-filter:blur(16px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.28);
+    animation:fadeUp 1s ease;
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.sub-title{
+    text-align:center;
+    color:#dbeafe;
+    margin-bottom:30px;
+    font-size:16px;
+}
+
+/* About Grid */
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+    margin-bottom:30px;
+}
+
+/* Cards */
+.card{
+    padding:22px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,0.12);
+    box-shadow:0 15px 28px rgba(0,0,0,0.20);
+}
+
+.card i{
+    font-size:28px;
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#dbeafe;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* Skills Tags */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+}
+
+.skills span{
+    padding:8px 14px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    font-size:14px;
+}
+
+/* Buttons */
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:14px;
+    font-weight:600;
+    color:#fff;
+    transition:0.3s ease;
+    box-shadow:0 10px 18px rgba(0,0,0,0.18);
+}
+
+.home{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+}
+
+.contact{
+    background:linear-gradient(135deg,#ec4899,#f43f5e);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+/* Animation */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.container{
+    padding:28px 18px;
+}
+
+h1{
+    font-size:28px;
+}
+
+.sub-title{
+    font-size:14px;
+}
+
+.btn{
+    width:100%;
+    text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>👨‍💻 About Me</h1>
+<p class="sub-title">Passionate Learner • Future Developer • Creative Thinker</p>
+
+<div class="about-grid">
+
+<div class="card">
+<i class="fa-solid fa-user-graduate"></i>
+<h3>Education</h3>
+<p>Student of BCA at MES Vasant Joshi College, South Goa, India. Building strong knowledge in programming and technology.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-laptop-code"></i>
+<h3>Career Goal</h3>
+<p>I am an aspiring software developer with a strong passion for web development and creating modern digital solutions.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-lightbulb"></i>
+<h3>Interests</h3>
+<p>I enjoy learning new technologies, exploring coding trends, and improving my personal and technical skills.</p>
+
+<div class="skills">
+<span>MySql</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Java</span>
+<span>Video editing</span>
+<span>photography</span>
+</div>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-headphones"></i>
+<h3>Hobbies</h3>
+<p>Listening to music, self development, exploring ideas, and staying motivated for future success.</p>
+</div>
+
+</div>
+
+<div class="actions">
+<a href="index.html" class="btn home">
+<i class="fa-solid fa-house"></i> Home
+</a>
+
+<a href="contact.html" class="btn contact">
+<i class="fa-solid fa-envelope"></i> Contact Me
+</a>
+</div>
+
+</div>
+
+</body>
+</html>
